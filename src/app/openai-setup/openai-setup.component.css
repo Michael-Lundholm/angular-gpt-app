@@ -1,0 +1,15 @@
+ul{
+    display: flex;
+    flex-direction: column;
+}
+li{
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 1em;
+    justify-content: space-between;
+}
+
+li button {
+    padding: 1em;
+    height: auto;
+}

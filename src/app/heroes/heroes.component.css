@@ -1,0 +1,13 @@
+.heroes ul{
+    display: flex;
+}
+.heroes li{
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 1em;
+    justify-content: space-between;
+}
+
+.heroes .badge {
+    margin-right: 1em;
+}

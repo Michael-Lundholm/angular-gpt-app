@@ -1,0 +1,27 @@
+<label for="newMessage">Add message</label>
+<div name="newMessage">
+    <button mat-raised-button *ngFor="let role of tRoles" aria-selected="false" (click)="tRoleIndex=tRoles.indexOf(role)">{{role}}</button>
+    <p>{{tRoles[tRoleIndex] | uppercase}}</p>
+    <div>
+        <textarea matInput name="testing" id="idkAgain" cols="30" rows="10" [(ngModel)]="tContent"></textarea>
+    </div>
+    <button mat-raised-button (click)="addMessage()"> Add </button>
+</div>
+
+<ul>
+<li class="messages" *ngFor="let message of tMessages">
+    <div><button mat-raised-button (click)="onSelect(message)" [color]="message != selectedMessage ? 'primary' : 'accent'">Role: {{message["role"]}}  |  Content: {{message["content"]}}</button></div>
+    <!-- <label for="message">Role: {{message["role"]}}  |  Content: {{message["content"]}}</label> -->
+</li>
+</ul>
+
+<button mat-raised-button color="warn" (click)="test()">Test</button>
+
+<div *ngIf="selectedMessage">
+    <h2>{{selectedMessage.name | uppercase}}</h2>
+    <div>Role: {{selectedMessage.role}}</div>
+    <div>
+        <textarea cols="30" rows="10" [(ngModel)]="selectedMessage.content"></textarea>
+    </div>
+    <div><button mat-raised-button color="warn" (click)="onDelete(selectedMessage)">Delete</button></div>
+</div>
